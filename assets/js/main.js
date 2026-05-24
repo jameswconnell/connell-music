@@ -28,20 +28,36 @@ if (scrollBtn) {
   });
 }
 
-// Video thumbnail → iframe
+// Video thumbnail → fullscreen lightbox
+function openVideoLightbox(id) {
+  const overlay = document.createElement('div');
+  overlay.className = 'video-overlay';
+  overlay.innerHTML = `
+    <button class="video-overlay-close" aria-label="Close">&times;</button>
+    <div class="video-overlay-inner">
+      <iframe src="https://player.vimeo.com/video/${id}?autoplay=1&color=c9a84c&title=0&byline=0&portrait=0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>`;
+
+  function close() {
+    overlay.classList.add('video-overlay-out');
+    overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
+    document.body.style.overflow = '';
+  }
+
+  overlay.querySelector('.video-overlay-close').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); }
+  });
+
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+}
+
 document.querySelectorAll('.video-item[data-id]').forEach(item => {
   item.addEventListener('click', function () {
-    const id = this.dataset.id;
-    const thumb = this.querySelector('.video-thumb');
-    if (!thumb) return;
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&color=c9a84c&title=0&byline=0`;
-    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframe.style.cssText = 'width:100%;aspect-ratio:16/9;border:none;display:block';
-    thumb.replaceWith(iframe);
-    this.style.cursor = 'default';
-    this.removeEventListener('click', arguments.callee);
+    openVideoLightbox(this.dataset.id);
   });
 });
 
