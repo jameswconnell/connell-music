@@ -58,29 +58,45 @@
       </div>
 
       <ol class="track-list">
-        <li class="track-item is-active" data-src="assets/audio/ItalianArtSong.mp3">
+        <li class="track-item is-active" data-src="assets/audio/AlleluiaMargaret.m4a">
           <span class="track-num">1</span>
           Soprano and Orchestra — Mozart: "Alleluia"
         </li>
-        <li class="track-item" data-src="assets/audio/violin-piano.mp3">
+        <li class="track-item" data-src="assets/audio/violin-piano.m4a">
           <span class="track-num">2</span>
           Violin &amp; Piano — Mon cœur s'ouvre à ta voix
         </li>
-        <li class="track-item" data-src="assets/audio/cello-piano.mp3">
+        <li class="track-item" data-src="assets/audio/AmandaCello.m4a">
           <span class="track-num">3</span>
           Cello &amp; Piano
         </li>
-        <li class="track-item" data-src="assets/audio/appalachian-spring.mp3">
+        <li class="track-item" data-src="assets/audio/AppalacianSpring.m4a">
           <span class="track-num">4</span>
           Chamber Orchestra — Appalachian Spring
         </li>
-        <li class="track-item" data-src="assets/audio/noel-we-sing.mp3">
+        <li class="track-item" data-src="assets/audio/NoelWeSing.m4a">
           <span class="track-num">5</span>
           Voice Quartette &amp; Organ — Noel We Sing
         </li>
-        <li class="track-item" data-src="assets/audio/pipe-organ-bach.mp3">
+        <li class="track-item" data-src="assets/audio/DavidHiggsBachSinfonia29.m4a">
           <span class="track-num">6</span>
           Pipe Organ — J.S. Bach, Sinfonia 29
+        </li>
+        <li class="track-item" data-src="assets/audio/WidorTocatta.m4a">
+          <span class="track-num">7</span>
+          Pipe Organ — Widor Toccata
+        </li>
+        <li class="track-item" data-src="assets/audio/Rejoice.m4a">
+          <span class="track-num">8</span>
+          Choir &amp; Organ — Rejoice
+        </li>
+        <li class="track-item" data-src="assets/audio/OMiaBambinoCaro.m4a">
+          <span class="track-num">9</span>
+          Soprano &amp; Orchestra — Puccini: "O mio babbino caro"
+        </li>
+        <li class="track-item" data-src="assets/audio/ODivine-Redeemer.m4a">
+          <span class="track-num">10</span>
+          Soprano &amp; Pipe Organ — O Divine Redeemer
         </li>
       </ol>
     </div>
@@ -123,7 +139,7 @@ const ws = WaveSurfer.create({
   barGap: 1,
   barRadius: 2,
   normalize: true,
-  url: tracks[0].dataset.src,
+  url: 'assets/audio/AlleluiaMargaret.m4a',
 });
 
 const trackInfo = document.querySelector('.track-info');
