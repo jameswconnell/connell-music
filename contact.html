@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Connell Music</title>
+<meta name="description" content="Contact James Connell to discuss your classical music recording project — audio, video, or both.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Connell Music</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a class="nav-email" href="mailto:james@connellmusic.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <button class="menu-btn" aria-label="Menu">Menu</button>
+  </nav>
+</header>
+
+<main>
+  <div class="inner-banner">
+    <h1 class="inner-title">Contact</h1>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-inner">
+      <h2 class="contact-heading">Send a Message</h2>
+      <p class="contact-sub">Get in Touch</p>
+      <p class="contact-note">Please make sure your email address and phone number are correct. If you do not hear back from me, it is because your email address and phone number have typos!</p>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <p class="req-note"><span>*</span> indicates required fields</p>
+
+        <div class="field form-row">
+          <div>
+            <label>First Name<span class="r">*</span></label>
+            <input type="text" name="first_name" required>
+          </div>
+          <div>
+            <label>Last Name<span class="r">*</span></label>
+            <input type="text" name="last_name" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email<span class="r">*</span></label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label>Subject<span class="r">*</span></label>
+          <input type="text" name="subject" required>
+        </div>
+
+        <div class="field">
+          <label>Comment or Message<span class="r">*</span></label>
+          <textarea id="message" name="message" maxlength="600" required></textarea>
+          <p class="char-hint">0 of 600 max characters</p>
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-row">
+      <a class="footer-brand" href="index.html">Connell Music</a>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="footer-email" href="mailto:james@connellmusic.com" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 Connell Music, All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

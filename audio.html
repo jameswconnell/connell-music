@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audio — Connell Music</title>
+<meta name="description" content="Audio recordings produced by James Connell — classical music samples featuring soprano, violin, piano, chamber orchestra, and pipe organ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">Connell Music</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bio.html">Bio</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="audio.html" class="active">Audio</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-email" href="mailto:james@connellmusic.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <button class="menu-btn" aria-label="Menu">Menu</button>
+  </nav>
+</header>
+
+<main>
+  <div class="inner-banner">
+    <h1 class="inner-title">Audio</h1>
+  </div>
+
+  <section class="audio-section">
+    <div class="audio-inner">
+      <div id="waveform"></div>
+
+      <div class="audio-controls">
+        <button class="ctrl-btn skip-back" aria-label="Skip back 10s">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+        </button>
+        <button class="ctrl-btn play-pause-btn" aria-label="Play / Pause">
+          <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="10,8 16,12 10,16"/></svg>
+          <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="10"/><line x1="10" y1="15" x2="10" y2="9"/><line x1="14" y1="15" x2="14" y2="9"/></svg>
+        </button>
+        <button class="ctrl-btn skip-fwd" aria-label="Skip forward 10s">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l4 2"/></svg>
+        </button>
+        <span class="track-info">Soprano and Orchestra — Mozart: "Alleluia"</span>
+        <div class="vol-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          <input type="range" id="volume" min="0" max="1" step="0.05" value="0.8">
+        </div>
+      </div>
+
+      <ol class="track-list">
+        <li class="track-item is-active" data-src="assets/audio/ItalianArtSong.mp3">
+          <span class="track-num">1</span>
+          Soprano and Orchestra — Mozart: "Alleluia"
+        </li>
+        <li class="track-item" data-src="assets/audio/violin-piano.mp3">
+          <span class="track-num">2</span>
+          Violin &amp; Piano — Mon cœur s'ouvre à ta voix
+        </li>
+        <li class="track-item" data-src="assets/audio/cello-piano.mp3">
+          <span class="track-num">3</span>
+          Cello &amp; Piano
+        </li>
+        <li class="track-item" data-src="assets/audio/appalachian-spring.mp3">
+          <span class="track-num">4</span>
+          Chamber Orchestra — Appalachian Spring
+        </li>
+        <li class="track-item" data-src="assets/audio/noel-we-sing.mp3">
+          <span class="track-num">5</span>
+          Voice Quartette &amp; Organ — Noel We Sing
+        </li>
+        <li class="track-item" data-src="assets/audio/pipe-organ-bach.mp3">
+          <span class="track-num">6</span>
+          Pipe Organ — J.S. Bach, Sinfonia 29
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-row">
+      <a class="footer-brand" href="index.html">Connell Music</a>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="footer-email" href="mailto:james@connellmusic.com" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© 2026 Connell Music, All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script type="module">
+import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js';
+
+const tracks = [...document.querySelectorAll('.track-item')];
+let currentIndex = 0;
+
+const ws = WaveSurfer.create({
+  container: '#waveform',
+  waveColor: 'rgba(255,255,255,0.2)',
+  progressColor: '#c9a84c',
+  height: 80,
+  barWidth: 2,
+  barGap: 1,
+  barRadius: 2,
+  normalize: true,
+  url: tracks[0].dataset.src,
+});
+
+const trackInfo = document.querySelector('.track-info');
+const playBtn   = document.querySelector('.play-pause-btn');
+const playIcon  = playBtn.querySelector('.play-icon');
+const pauseIcon = playBtn.querySelector('.pause-icon');
+
+function loadTrack(index) {
+  const item = tracks[index];
+  if (!item) return;
+  currentIndex = index;
+  ws.load(item.dataset.src);
+  trackInfo.textContent = item.textContent.trim().replace(/^\d+\s*/, '');
+  tracks.forEach((t, i) => t.classList.toggle('is-active', i === index));
+}
+
+ws.on('play',  () => { playIcon.style.display = 'none'; pauseIcon.style.display = ''; });
+ws.on('pause', () => { playIcon.style.display = ''; pauseIcon.style.display = 'none'; });
+ws.on('finish', () => { if (currentIndex < tracks.length - 1) { loadTrack(currentIndex + 1); ws.play(); } });
+
+playBtn.addEventListener('click', () => ws.playPause());
+document.querySelector('.skip-back').addEventListener('click', () => ws.skip(-10));
+document.querySelector('.skip-fwd').addEventListener('click',  () => ws.skip(10));
+
+const vol = document.getElementById('volume');
+vol.addEventListener('input', () => ws.setVolume(parseFloat(vol.value)));
+
+tracks.forEach((item, i) => {
+  item.addEventListener('click', () => { loadTrack(i); ws.play(); });
+});
+</script>
+</body>
+</html>
