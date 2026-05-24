@@ -34,10 +34,19 @@ function openVideoLightbox(id) {
   overlay.className = 'video-overlay';
   overlay.innerHTML = `
     <button class="video-overlay-close" aria-label="Close">&times;</button>
-    <div class="video-overlay-inner">
-      <iframe src="https://player.vimeo.com/video/${id}?autoplay=1&color=c9a84c&title=0&byline=0&portrait=0"
-        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-overlay-wrap">
+      <div class="video-overlay-inner">
+        <iframe src="https://player.vimeo.com/video/${id}?autoplay=1&color=c9a84c&title=0&byline=0&portrait=0"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <button class="video-fullscreen-btn">Play Full Screen</button>
     </div>`;
+
+  overlay.querySelector('.video-fullscreen-btn').addEventListener('click', () => {
+    const iframe = overlay.querySelector('iframe');
+    if (iframe.requestFullscreen) iframe.requestFullscreen();
+    else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+  });
 
   function close() {
     overlay.classList.add('video-overlay-out');
