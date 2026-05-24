@@ -1,3 +1,12 @@
+// Hero word-by-word animation
+const heroH1 = document.querySelector('.hero h1');
+if (heroH1) {
+  const words = heroH1.textContent.trim().split(' ');
+  heroH1.innerHTML = words
+    .map((w, i) => `<span class="word" style="animation-delay:${(0.08 + i * 0.22).toFixed(2)}s">${w}</span>`)
+    .join(' ');
+}
+
 // Mobile menu
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
