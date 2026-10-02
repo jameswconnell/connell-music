@@ -3,5 +3,21 @@
   "outputDirectory": ".",
   "installCommand": null,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/bio", "destination": "/the-team", "permanent": true },
+    { "source": "/james-bio", "destination": "/the-team", "permanent": true },
+    { "source": "/bio-gary-levinson", "destination": "/gary-levinson", "permanent": true },
+    { "source": "/bio-eric-silberger", "destination": "/eric-silberger", "permanent": true },
+    { "source": "/bio-ricardo-viega", "destination": "/ricardo-veiga", "permanent": true },
+    { "source": "/ricardo-viega", "destination": "/ricardo-veiga", "permanent": true },
+    { "source": "/the-team/gary-levinson", "destination": "/gary-levinson", "permanent": true },
+    { "source": "/the-team/eric-silberger", "destination": "/eric-silberger", "permanent": true },
+    { "source": "/the-team/ricardo-viega", "destination": "/ricardo-veiga", "permanent": true },
+    { "source": "/photography", "destination": "/photos", "permanent": true },
+    { "source": "/team", "destination": "/the-team", "permanent": true },
+    { "source": "/meet-the-team", "destination": "/the-team", "permanent": true },
+    { "source": "/about", "destination": "/the-team", "permanent": true },
+    { "source": "/404", "destination": "/", "permanent": false }
+  ]
 }

@@ -3,124 +3,451 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recording Session Photos — James Connell | Connell Music</title>
-<meta name="description" content="Photos from classical music recording sessions with professional soloists, chamber groups, orchestras, and choirs — produced by James Connell, classical music recording producer based in Texas.">
-<meta name="author" content="James Connell">
+<title>Classical Music Photography — Dallas Fort Worth | Connell Music</title>
+<meta name="description" content="Photography from classical music recording sessions and performances produced by Connell Music — soloists, orchestras, chamber ensembles, and choirs photographed in Dallas Fort Worth, TX and beyond.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://connellmusic.com/photos">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connellmusic.com/photos">
-<meta property="og:title" content="Recording Session Photos — James Connell | Connell Music">
-<meta property="og:description" content="Photos from classical music recording sessions with professional soloists, chamber groups, orchestras, and choirs — produced by James Connell.">
-<meta property="og:image" content="https://connellmusic.com/assets/images/hero-home.jpg">
+<meta property="og:title" content="Classical Music Photography — Dallas Fort Worth | Connell Music">
+<meta property="og:description" content="Photography from classical music recording sessions and performances produced by Connell Music in Dallas Fort Worth, TX and beyond.">
+<meta property="og:image" content="https://connellmusic.com/assets/images/hero-bio.jpg">
 <meta property="og:site_name" content="Connell Music">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Recording Session Photos — James Connell | Connell Music">
-<meta name="twitter:description" content="Photos from classical music recording sessions — soloists, orchestras, choirs, and chamber groups. James Connell, recording producer based in Texas.">
-<meta name="twitter:image" content="https://connellmusic.com/assets/images/hero-home.jpg">
+<meta name="twitter:title" content="Classical Music Photography — Dallas Fort Worth | Connell Music">
+<meta name="twitter:description" content="Photography from classical music recording sessions and performances produced by Connell Music in Dallas Fort Worth, TX and beyond.">
+<meta name="twitter:image" content="https://connellmusic.com/assets/images/hero-bio.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+
+/* ── PAGE INTRO ── */
+.photo-intro {
+  padding: calc(68px + 64px) 48px 48px;
+  text-align: center;
+}
+.photo-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 18px;
+}
+.photo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(40px, 5.5vw, 72px);
+  letter-spacing: .08em;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.photo-rule {
+  width: 48px;
+  height: 1px;
+  background: rgba(201,168,76,.45);
+  margin: 0 auto;
+}
+.photo-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .04em;
+  max-width: 580px;
+  margin: 22px auto 0;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ── GALLERY GRID ── */
+.gallery-section {
+  padding: 0 28px 80px;
+}
+.gallery-grid {
+  max-width: 1480px;
+  margin: 0 auto;
+  columns: 3;
+  column-gap: 18px;
+}
+
+/* ── GALLERY ITEMS ── */
+.g-item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .75s cubic-bezier(0.22,1,0.36,1),
+              transform .75s cubic-bezier(0.22,1,0.36,1);
+}
+.g-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.g-item img {
+  width: 100%;
+  display: block;
+  filter: brightness(.78) saturate(.88);
+  transition: transform .65s cubic-bezier(0.22,1,0.36,1),
+              filter .45s ease;
+}
+.g-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1) saturate(1);
+}
+.g-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0);
+  transition: background .3s;
+}
+.g-item:hover .g-overlay {
+  background: rgba(0,0,0,.14);
+}
+.g-expand {
+  opacity: 0;
+  color: rgba(255,255,255,.9);
+  transition: opacity .25s;
+}
+.g-item:hover .g-expand {
+  opacity: 1;
+}
+
+/* ── LIGHTBOX ── */
+@keyframes lbFadeIn  { from { opacity:0 } to { opacity:1 } }
+@keyframes lbFadeOut { from { opacity:1 } to { opacity:0 } }
+@keyframes lbImgIn   { from { opacity:0; transform:scale(.94) } to { opacity:1; transform:scale(1) } }
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(6,6,6,.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn .2s ease forwards;
+}
+.lb.lb-closing {
+  animation: lbFadeOut .18s ease forwards;
+}
+
+/* Close button */
+.lb-close {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 901;
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  color: rgba(255,255,255,.42);
+  cursor: pointer;
+  line-height: 1;
+  transition: color .2s;
+}
+.lb-close:hover { color: #fff; }
+.lb-close svg { display: block; }
+
+/* Prev / Next */
+.lb-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 901;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.28);
+  cursor: pointer;
+  padding: 24px 18px;
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.lb-nav:hover { color: rgba(255,255,255,.9); }
+.lb-prev { left: 8px; }
+.lb-next { right: 8px; }
+
+/* Image */
+.lb-img-wrap {
+  max-width: 88vw;
+  max-height: 86vh;
+  animation: lbImgIn .28s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.lb-img-wrap img {
+  max-width: 88vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Counter */
+.lb-counter {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: .22em;
+  color: rgba(255,255,255,.3);
+  z-index: 901;
+  white-space: nowrap;
+}
+
+/* Caption */
+.lb-caption {
+  position: fixed;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  z-index: 901;
+  white-space: nowrap;
+  letter-spacing: .04em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .photo-intro { padding: calc(68px + 40px) 24px 36px; }
+  .gallery-section { padding: 0 14px 60px; }
+  .gallery-grid { columns: 2; column-gap: 12px; }
+  .g-item { margin-bottom: 12px; }
+}
+@media (max-width: 560px) {
+  .gallery-grid { columns: 1; }
+  .lb-prev, .lb-next { display: none; }
+}
+</style>
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav">
-    <a class="brand" href="index.html">Connell Music</a>
+    <a class="brand" href="/">Connell Music</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="video.html">Video</a></li>
-      <li><a href="audio.html">Audio</a></li>
-      <li><a href="photos.html" class="active">Photos</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="/the-team" class="nav-dropdown-toggle">The Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/the-team">James Connell</a></li>
+          <li><a href="/gary-levinson">Gary Levinson</a></li>
+          <li><a href="/eric-silberger">Eric Silberger</a></li>
+          <li><a href="/ricardo-veiga">Ricardo Veiga</a></li>
+        </ul>
+      </li>
+      <li><a href="/video">Video</a></li>
+      <li><a href="/audio">Audio</a></li>
+      <li><a href="/photos" class="active">Photos</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
-    <a class="nav-email" href="mailto:james@connellmusic.com" aria-label="Email">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-    </a>
     <button class="menu-btn" aria-label="Menu">Menu</button>
   </nav>
 </header>
 
-<main>
-  <div class="inner-banner">
-    <h1 class="inner-title">Photos</h1>
-  </div>
+<div class="photo-intro">
+  <p class="photo-eyebrow">James Connell — Recording Producer</p>
+  <h1 class="photo-title">Photos</h1>
+  <div class="photo-rule"></div>
+  <p class="photo-desc">Photographs from classical music recording sessions, rehearsals, and performances produced by Connell Music — soloists, chamber ensembles, orchestras, and choirs, captured in Texas and beyond.</p>
+</div>
 
-  <section class="photos-section">
-    <div class="masonry">
-      <div class="masonry-item"><img src="assets/images/ClassicalPianoRecording.jpg" alt="Classical Piano Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/James-Pincus.jpg" alt="With Pinchas Zukerman" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/Andrew-Litton-Piano.jpg" alt="Andrew Litton Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3541.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3547.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/James-and-Andrew-Litton.jpg" alt="With Maestro Andrew Litton" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/PianoConcertoRecording.jpg" alt="Piano Concerto Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3560.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3568.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/ClassicalTrioRecording.jpg" alt="Classical Trio Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3570.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/JWC_0050.jpg" alt="With Alessandro Deljavan" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3571.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/PianoViolinSopranoRecording.jpg" alt="Piano, Violin & Soprano Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3575.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3646-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/SopranoClassicalRecording.jpg" alt="Soprano Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3657-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3668-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/JWC_0029.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/ViolinClassicalRecording.jpg" alt="Violin Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3674-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3676-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/StienwayClassicalRecording.jpg" alt="Steinway Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3679-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/QuartetteRecording-scaled.jpg" alt="Quartette Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3680-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/JamesPinchas.jpg" alt="With Pinchas Zukerman" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3964-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/StudentTrioClasssicalRecording.jpg" alt="Student Trio Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_3976.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_4010.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/James_Connell_Presenting.jpg" alt="James Connell Presenting" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_4054-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_4587-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/JamesViolin.jpg" alt="James Connell with Violin" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_6327.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_7096-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/KawaiCorporateVideo.jpg" alt="Kawai Recording" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_7098-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_7204-2.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/JWC_0283.jpg" alt="James Connell" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_2113.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_2118.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/James_Connell_Bio2.jpg" alt="James Connell" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_2127.jpg" alt="" loading="lazy"></div>
-      <div class="masonry-item"><img src="assets/images/IMG_2129.jpg" alt="" loading="lazy"></div>
-    </div>
-  </section>
-</main>
+<section class="gallery-section">
+  <div class="gallery-grid" id="grid"></div>
+</section>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-row">
-      <a class="footer-brand" href="index.html">Connell Music</a>
+      <a class="footer-brand" href="/">Connell Music</a>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bio.html">Bio</a></li>
-        <li><a href="video.html">Video</a></li>
-        <li><a href="audio.html">Audio</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/the-team">The Team</a></li>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/audio">Audio</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
-      <a class="footer-email" href="mailto:james@connellmusic.com" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      </a>
     </div>
+    <p class="footer-loc">Classical Music Recording &amp; Video Production · Dallas–Fort Worth, TX</p>
     <p class="footer-copy">© 2026 Connell Music, All Rights Reserved</p>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script>
+const PHOTOS = [
+  { src:'assets/images/JamesPinchas.jpg',                 mob:'assets/images/mobile/JamesPinchas.jpg', alt:'With Pinchas Zukerman' },
+  { src:'assets/images/IMG_4054-2.jpg',                   mob:'assets/images/mobile/IMG_4054-2.jpg', alt:'' },
+  { src:'assets/images/James-and-Andrew-Litton.jpg',      mob:'assets/images/mobile/James-and-Andrew-Litton.jpg', alt:'With Maestro Andrew Litton' },
+  { src:'assets/images/Andrew-Litton-Piano.jpg',          mob:'assets/images/mobile/Andrew-Litton-Piano.jpg', alt:'Andrew Litton at the Piano' },
+  { src:'assets/images/IMG_3541.jpg',                     mob:'assets/images/mobile/IMG_3541.jpg', alt:'' },
+  { src:'assets/images/IMG_3547.jpg',                     mob:'assets/images/mobile/IMG_3547.jpg', alt:'' },
+  { src:'assets/images/PianoConcertoRecording.jpg',       mob:'assets/images/mobile/PianoConcertoRecording.jpg', alt:'Piano Concerto Recording' },
+  { src:'assets/images/IMG_3560.jpg',                     mob:'assets/images/mobile/IMG_3560.jpg', alt:'' },
+  { src:'assets/images/IMG_3568.jpg',                     mob:'assets/images/mobile/IMG_3568.jpg', alt:'' },
+  { src:'assets/images/ClassicalTrioRecording.jpg',       mob:'assets/images/mobile/ClassicalTrioRecording.jpg', alt:'Classical Trio Recording' },
+  { src:'assets/images/IMG_3570.jpg',                     mob:'assets/images/mobile/IMG_3570.jpg', alt:'' },
+  { src:'assets/images/JWC_0050.jpg',                     mob:'assets/images/mobile/JWC_0050.jpg', alt:'With Alessandro Deljavan' },
+  { src:'assets/images/IMG_3571.jpg',                     mob:'assets/images/mobile/IMG_3571.jpg', alt:'' },
+  { src:'assets/images/PianoViolinSopranoRecording.jpg',  mob:'assets/images/mobile/PianoViolinSopranoRecording.jpg', alt:'Piano, Violin & Soprano Recording' },
+  { src:'assets/images/IMG_3575.jpg',                     mob:'assets/images/mobile/IMG_3575.jpg', alt:'' },
+  { src:'assets/images/IMG_3646-2.jpg',                   mob:'assets/images/mobile/IMG_3646-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3657-2.jpg',                   mob:'assets/images/mobile/IMG_3657-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3668-2.jpg',                   mob:'assets/images/mobile/IMG_3668-2.jpg', alt:'' },
+  { src:'assets/images/JWC_0029.jpg',                     mob:'assets/images/mobile/JWC_0029.jpg', alt:'' },
+  { src:'assets/images/IMG_3674-2.jpg',                   mob:'assets/images/mobile/IMG_3674-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3676-2.jpg',                   mob:'assets/images/mobile/IMG_3676-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3679-2.jpg',                   mob:'assets/images/mobile/IMG_3679-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3680-2.jpg',                   mob:'assets/images/mobile/IMG_3680-2.jpg', alt:'' },
+  { src:'assets/images/IMG_3964-2.jpg',                   mob:'assets/images/mobile/IMG_3964-2.jpg', alt:'' },
+  { src:'assets/images/StudentTrioClasssicalRecording.jpg',alt:'Student Trio Recording' },
+  { src:'assets/images/IMG_3976.jpg',                     mob:'assets/images/mobile/IMG_3976.jpg', alt:'' },
+  { src:'assets/images/IMG_4010.jpg',                     mob:'assets/images/mobile/IMG_4010.jpg', alt:'' },
+  { src:'assets/images/IMG_4587-2.jpg',                   mob:'assets/images/mobile/IMG_4587-2.jpg', alt:'' },
+  { src:'assets/images/JamesViolin.jpg',                  mob:'assets/images/mobile/JamesViolin.jpg', alt:'James Connell with Violin' },
+  { src:'assets/images/IMG_6327.jpg',                     mob:'assets/images/mobile/IMG_6327.jpg', alt:'' },
+  { src:'assets/images/IMG_7096-2.jpg',                   mob:'assets/images/mobile/IMG_7096-2.jpg', alt:'' },
+  { src:'assets/images/KawaiCorporateVideo.jpg',          mob:'assets/images/mobile/KawaiCorporateVideo.jpg', alt:'Kawai Recording' },
+  { src:'assets/images/IMG_7098-2.jpg',                   mob:'assets/images/mobile/IMG_7098-2.jpg', alt:'' },
+  { src:'assets/images/IMG_7204-2.jpg',                   mob:'assets/images/mobile/IMG_7204-2.jpg', alt:'' },
+  { src:'assets/images/IMG_2113.jpg',                     mob:'assets/images/mobile/IMG_2113.jpg', alt:'' },
+  { src:'assets/images/IMG_2118.jpg',                     mob:'assets/images/mobile/IMG_2118.jpg', alt:'' },
+  { src:'assets/images/IMG_2127.jpg',                     mob:'assets/images/mobile/IMG_2127.jpg', alt:'' },
+  { src:'assets/images/IMG_2129.jpg',                     mob:'assets/images/mobile/IMG_2129.jpg', alt:'' },
+];
+
+/* ── BUILD GRID ── */
+const grid = document.getElementById('grid');
+PHOTOS.forEach((p, i) => {
+  const el = document.createElement('div');
+  el.className = 'g-item';
+  el.dataset.i = i;
+  const mobSrc  = p.mob  || p.src;
+  const webpDesk = p.src.replace(/\.jpg$/i, '.webp');
+  const webpMob  = mobSrc.replace(/\.jpg$/i, '.webp');
+  el.innerHTML = `
+    <picture>
+      <source type="image/webp" srcset="${webpMob} 600w, ${webpDesk} 1200w" sizes="(max-width:600px) 600px, 1200px">
+      <img src="${p.src}" srcset="${mobSrc} 600w, ${p.src} 1200w" sizes="(max-width:600px) 600px, 1200px" alt="${p.alt}" loading="lazy">
+    </picture>
+    <div class="g-overlay">
+      <svg class="g-expand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+        <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+      </svg>
+    </div>`;
+  el.addEventListener('click', () => openLb(i));
+  grid.appendChild(el);
+});
+
+/* ── SCROLL REVEAL ── */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
+
+document.querySelectorAll('.g-item').forEach(el => revealObs.observe(el));
+
+/* ── LIGHTBOX ── */
+let lbIdx = 0;
+let lbEl = null;
+
+function openLb(i) {
+  lbIdx = i;
+  lbEl = document.createElement('div');
+  lbEl.className = 'lb';
+  lbEl.innerHTML = `
+    <button class="lb-close" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lb-nav lb-prev" aria-label="Previous">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="lb-img-wrap" id="lbImgWrap">
+      <img src="${PHOTOS[i].src}" alt="${PHOTOS[i].alt}">
+    </div>
+    <button class="lb-nav lb-next" aria-label="Next">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+    <div class="lb-caption" id="lbCaption">${PHOTOS[i].alt}</div>
+    <div class="lb-counter" id="lbCounter">${i + 1} / ${PHOTOS.length}</div>`;
+
+  lbEl.querySelector('.lb-close').addEventListener('click', closeLb);
+  lbEl.querySelector('.lb-prev').addEventListener('click', () => navLb(-1));
+  lbEl.querySelector('.lb-next').addEventListener('click', () => navLb(1));
+  lbEl.addEventListener('click', e => { if (e.target === lbEl) closeLb(); });
+
+  document.body.appendChild(lbEl);
+  document.body.style.overflow = 'hidden';
+}
+
+function navLb(dir) {
+  lbIdx = (lbIdx + dir + PHOTOS.length) % PHOTOS.length;
+  const wrap = lbEl.querySelector('#lbImgWrap');
+  wrap.style.animation = 'none';
+  wrap.offsetHeight; // reflow
+  wrap.style.animation = '';
+
+  const img = wrap.querySelector('img');
+  img.src = PHOTOS[lbIdx].src;
+  img.alt = PHOTOS[lbIdx].alt;
+
+  lbEl.querySelector('#lbCaption').textContent = PHOTOS[lbIdx].alt;
+  lbEl.querySelector('#lbCounter').textContent = `${lbIdx + 1} / ${PHOTOS.length}`;
+}
+
+function closeLb() {
+  if (!lbEl) return;
+  lbEl.classList.add('lb-closing');
+  lbEl.addEventListener('animationend', () => {
+    lbEl.remove();
+    lbEl = null;
+    document.body.style.overflow = '';
+  }, { once: true });
+}
+
+/* Keyboard navigation */
+document.addEventListener('keydown', e => {
+  if (!lbEl) return;
+  if (e.key === 'ArrowRight') navLb(1);
+  if (e.key === 'ArrowLeft')  navLb(-1);
+  if (e.key === 'Escape')     closeLb();
+});
+
+/* Touch swipe */
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+document.addEventListener('touchend', e => {
+  if (!lbEl) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(dx) > 48) navLb(dx < 0 ? 1 : -1);
+}, { passive: true });
+</script>
 </body>
 </html>

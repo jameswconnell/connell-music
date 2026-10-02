@@ -7,6 +7,35 @@ if (heroH1) {
     .join(' ');
 }
 
+// Page hero (bio) word-by-word animation
+const pageTitle = document.querySelector('.page-title');
+if (pageTitle) {
+  const words = pageTitle.textContent.trim().split(' ');
+  pageTitle.innerHTML = words
+    .map((w, i) => `<span class="word" style="animation-delay:${(0.08 + i * 0.22).toFixed(2)}s">${w}</span>`)
+    .join(' ');
+}
+
+// Team member section scroll-triggered animations (Gary / Eric / Ricardo)
+document.querySelectorAll('.team-member-header').forEach(header => {
+  const nameEl = header.querySelector('.team-member-name');
+  const roleEl = header.querySelector('.team-member-role');
+  if (nameEl) {
+    const words = nameEl.textContent.trim().split(' ');
+    nameEl.innerHTML = words
+      .map((w, i) => `<span class="word" style="transition-delay:${(0.08 + i * 0.22).toFixed(2)}s">${w}</span>`)
+      .join(' ');
+    if (roleEl) {
+      const lastDelay = 0.08 + (words.length - 1) * 0.22;
+      roleEl.style.transitionDelay = (lastDelay + 0.36).toFixed(2) + 's';
+    }
+  }
+  const obs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { header.classList.add('visible'); obs.disconnect(); }
+  }, { threshold: 0.25 });
+  obs.observe(header);
+});
+
 // Mobile menu
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
@@ -18,6 +47,16 @@ if (menuBtn && navLinks) {
     }
   });
 }
+
+// Mobile nav dropdown toggle
+document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+  toggle.addEventListener('click', e => {
+    if (window.innerWidth <= 960) {
+      e.preventDefault();
+      toggle.closest('.nav-dropdown').classList.toggle('open');
+    }
+  });
+});
 
 // Scroll down button
 const scrollBtn = document.querySelector('.scroll-down');

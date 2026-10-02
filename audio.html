@@ -3,186 +3,693 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Classical Music Audio Recordings — Connell Music | Texas</title>
-<meta name="description" content="Listen to classical music audio recordings produced by James Connell — soprano, violin, piano, cello, chamber orchestra, choir, and pipe organ. Texas-based recording producer with over forty years of experience.">
-<meta name="author" content="James Connell">
+<title>Classical Music Audio Recordings — Dallas Fort Worth | Connell Music</title>
+<meta name="description" content="Listen to classical music recordings produced by Connell Music — soloists, chamber ensembles, choirs, and orchestras. Classical music recording producer based in Dallas Fort Worth, TX with over forty years of experience.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://connellmusic.com/audio">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connellmusic.com/audio">
-<meta property="og:title" content="Classical Music Audio Recordings — Connell Music | Texas">
-<meta property="og:description" content="Listen to classical music audio recordings by James Connell — soprano, violin, piano, cello, chamber orchestra, choir, and pipe organ.">
-<meta property="og:image" content="https://connellmusic.com/assets/images/hero-home.jpg">
+<meta property="og:title" content="Classical Music Audio Recordings — Dallas Fort Worth | Connell Music">
+<meta property="og:description" content="Listen to classical music recordings produced by Connell Music — soloists, chamber ensembles, choirs, and orchestras. Based in Dallas Fort Worth, TX.">
+<meta property="og:image" content="https://connellmusic.com/assets/images/ClassicalTrioRecording.jpg">
 <meta property="og:site_name" content="Connell Music">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Classical Music Audio Recordings — Connell Music | Texas">
-<meta name="twitter:description" content="Classical music audio recordings by James Connell — soprano, violin, piano, chamber orchestra, choir, and pipe organ. Texas-based recording producer.">
-<meta name="twitter:image" content="https://connellmusic.com/assets/images/hero-home.jpg">
+<meta name="twitter:title" content="Classical Music Audio Recordings — Dallas Fort Worth | Connell Music">
+<meta name="twitter:description" content="Listen to classical music recordings produced by Connell Music — soloists, chamber ensembles, choirs, and orchestras. Based in Dallas Fort Worth, TX.">
+<meta name="twitter:image" content="https://connellmusic.com/assets/images/ClassicalTrioRecording.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicPlaylist",
+  "name": "Classical Music Recordings — Connell Music",
+  "description": "Classical music recordings produced by James Connell — soloists, chamber ensembles, choirs, orchestras, and pipe organ. Texas-based recording producer.",
+  "url": "https://connellmusic.com/audio",
+  "numTracks": 10,
+  "track": [
+    {"@type":"MusicRecording","name":"Mozart: Alleluia","description":"Soprano and Orchestra","byArtist":{"@type":"MusicGroup","name":"Soprano and Orchestra"},"recordingOf":{"@type":"MusicComposition","name":"Alleluia","composer":{"@type":"Person","name":"Wolfgang Amadeus Mozart"}}},
+    {"@type":"MusicRecording","name":"Mon cœur s'ouvre à ta voix","description":"Violin and Piano — Connell Music","byArtist":{"@type":"MusicGroup","name":"Gary Levinson, violin; Baya Kakouberi, piano"},"recordingOf":{"@type":"MusicComposition","name":"Mon cœur s'ouvre à ta voix","composer":{"@type":"Person","name":"Camille Saint-Saëns"}}},
+    {"@type":"MusicRecording","name":"Cello and Piano","description":"Chamber recording produced by Connell Music"},
+    {"@type":"MusicRecording","name":"Appalachian Spring","description":"Chamber Orchestra recording produced by Connell Music","recordingOf":{"@type":"MusicComposition","name":"Appalachian Spring","composer":{"@type":"Person","name":"Aaron Copland"}}},
+    {"@type":"MusicRecording","name":"Noel We Sing","description":"Voice Quartette and Organ recording produced by Connell Music"},
+    {"@type":"MusicRecording","name":"J.S. Bach, Sinfonia 29","description":"Pipe Organ recording by David Higgs, produced by Connell Music","byArtist":{"@type":"Person","name":"David Higgs"},"recordingOf":{"@type":"MusicComposition","name":"Sinfonia 29","composer":{"@type":"Person","name":"Johann Sebastian Bach"}}},
+    {"@type":"MusicRecording","name":"Widor Toccata","description":"Pipe Organ recording produced by Connell Music","recordingOf":{"@type":"MusicComposition","name":"Toccata from Symphony No. 5","composer":{"@type":"Person","name":"Charles-Marie Widor"}}},
+    {"@type":"MusicRecording","name":"Rejoice","description":"Choir and Organ recording produced by Connell Music"},
+    {"@type":"MusicRecording","name":"Puccini: O mio babbino caro","description":"Soprano and Orchestra recording produced by Connell Music","recordingOf":{"@type":"MusicComposition","name":"O mio babbino caro","composer":{"@type":"Person","name":"Giacomo Puccini"}}},
+    {"@type":"MusicRecording","name":"O Divine Redeemer","description":"Soprano and Pipe Organ recording produced by Connell Music"}
+  ]
+}
+</script>
+<style>
+/* ── SPOTIFY-STYLE AUDIO PAGE ── */
+
+body.sp-page {
+  background: #121212;
+  padding-bottom: 90px;
+}
+
+/* ── PLAYLIST HEADER ── */
+.sp-header {
+  padding: calc(68px + 48px) 48px 32px;
+  background: linear-gradient(180deg, #2d1f06 0%, #1a1208 50%, #121212 100%);
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.sp-header-art {
+  width: 192px;
+  height: 192px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 48px rgba(0,0,0,.7);
+  overflow: hidden;
+}
+
+.sp-header-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sp-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sp-type {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sp-header-info h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(32px, 5.5vw, 76px);
+  color: #fff;
+  line-height: 1;
+  letter-spacing: .04em;
+  margin: 4px 0;
+}
+
+.sp-header-info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.sp-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+/* ── TRACK SECTION ── */
+.sp-section {
+  background: linear-gradient(180deg, #1a1208 0%, #121212 100px);
+  padding: 0 32px 48px;
+}
+
+.sp-controls-row {
+  display: flex;
+  align-items: center;
+  padding: 24px 16px 16px;
+}
+
+.sp-play-all {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #c9a84c;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(201,168,76,.4);
+  transition: transform .1s, background .15s, box-shadow .15s;
+}
+
+.sp-play-all:hover {
+  transform: scale(1.06);
+  background: #d4b560;
+  box-shadow: 0 6px 24px rgba(201,168,76,.5);
+}
+
+/* Track table header */
+.sp-track-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 52px;
+  gap: 8px;
+  padding: 6px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #b3b3b3;
+}
+
+.sp-track-header .col-dur {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Track rows */
+.sp-tracklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sp-track {
+  display: grid;
+  grid-template-columns: 40px 1fr 52px;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  align-items: center;
+  transition: background .12s;
+}
+
+.sp-track:hover {
+  background: rgba(255,255,255,.07);
+}
+
+.sp-track.is-active {
+  background: rgba(201,168,76,.1);
+}
+
+/* Track number / equalizer */
+.sp-track-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.sp-track.is-active .sp-track-num .num-text {
+  color: #c9a84c;
+}
+
+.eq-bars {
+  display: none;
+  gap: 2px;
+  align-items: flex-end;
+  height: 14px;
+}
+
+.eq-bars span {
+  width: 3px;
+  background: #c9a84c;
+  border-radius: 1px;
+  transform-origin: bottom;
+}
+
+.sp-track.is-active.is-playing .num-text { display: none; }
+.sp-track.is-active.is-playing .eq-bars  { display: flex; }
+
+.eq-bars span:nth-child(1) { height: 35%; animation: eq 0.9s ease-in-out infinite alternate; }
+.eq-bars span:nth-child(2) { height: 80%; animation: eq 0.7s ease-in-out infinite alternate .15s; }
+.eq-bars span:nth-child(3) { height: 55%; animation: eq 1.0s ease-in-out infinite alternate .3s; }
+
+@keyframes eq {
+  from { transform: scaleY(1); }
+  to   { transform: scaleY(2.4); }
+}
+
+/* Track info */
+.sp-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.sp-track-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .12s;
+}
+
+.sp-track.is-active .sp-track-title {
+  color: #c9a84c;
+}
+
+.sp-track-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.sp-track-dur {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #b3b3b3;
+  text-align: right;
+}
+
+/* ── BOTTOM PLAYER BAR ── */
+.sp-player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #181818;
+  border-top: 1px solid #282828;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 1000;
+}
+
+/* Now playing info */
+.sp-now-playing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.sp-now-art {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sp-now-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sp-now-text {
+  min-width: 0;
+}
+
+.sp-now-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sp-now-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #b3b3b3;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Center controls */
+.sp-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sp-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sp-ctrl-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color .15s;
+  flex-shrink: 0;
+}
+
+.sp-ctrl-btn:hover { color: #fff; }
+
+.sp-ctrl-btn.sp-play-pause {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  padding: 0;
+  transition: transform .1s, background .15s;
+}
+
+.sp-ctrl-btn.sp-play-pause:hover {
+  background: #e8e8e8;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Progress row */
+.sp-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.sp-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #b3b3b3;
+  min-width: 34px;
+  text-align: center;
+  tabular-nums: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.sp-seek,
+.sp-vol-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  transition: height .1s;
+}
+
+.sp-seek { flex: 1; }
+
+.sp-seek:hover,
+.sp-vol-range:hover { height: 5px; }
+
+.sp-seek::-webkit-slider-thumb,
+.sp-vol-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.sp-seek:hover::-webkit-slider-thumb,
+.sp-vol-range:hover::-webkit-slider-thumb { opacity: 1; }
+
+/* Right: volume */
+.sp-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.sp-vol-range { width: 90px; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .sp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: calc(68px + 24px) 24px 24px;
+  }
+  .sp-header-art { width: 140px; height: 140px; }
+  .sp-section { padding: 0 16px 48px; }
+  .sp-player-bar { grid-template-columns: 1fr 2fr; }
+}
+</style>
 </head>
-<body>
+<body class="sp-page">
 
 <header class="site-header">
   <nav class="nav">
-    <a class="brand" href="index.html">Connell Music</a>
+    <a class="brand" href="/">Connell Music</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="video.html">Video</a></li>
-      <li><a href="audio.html" class="active">Audio</a></li>
-      <li><a href="photos.html">Photos</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="/the-team" class="nav-dropdown-toggle">The Team</a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/the-team">James Connell</a></li>
+          <li><a href="/gary-levinson">Gary Levinson</a></li>
+          <li><a href="/eric-silberger">Eric Silberger</a></li>
+          <li><a href="/ricardo-veiga">Ricardo Veiga</a></li>
+        </ul>
+      </li>
+      <li><a href="/video">Video</a></li>
+      <li><a href="/audio" class="active">Audio</a></li>
+      <li><a href="/photos">Photos</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
-    <a class="nav-email" href="mailto:james@connellmusic.com" aria-label="Email">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-    </a>
     <button class="menu-btn" aria-label="Menu">Menu</button>
   </nav>
 </header>
 
-<main>
-  <div class="inner-banner">
-    <h1 class="inner-title">Audio</h1>
+<div class="sp-header">
+  <div class="sp-header-art">
+    <picture>
+          <source type="image/webp" srcset="assets/images/mobile/ClassicalTrioRecording.webp 320w, assets/images/ClassicalTrioRecording.webp 640w" sizes="(max-width:600px) 320px, 640px">
+          <img src="assets/images/ClassicalTrioRecording.jpg" srcset="assets/images/mobile/ClassicalTrioRecording.jpg 320w, assets/images/ClassicalTrioRecording.jpg 640w" sizes="(max-width:600px) 320px, 640px" alt="Connell Music recordings">
+        </picture>
+  </div>
+  <div class="sp-header-info">
+    <span class="sp-type">Playlist</span>
+    <h1>Classical Music Recordings</h1>
+    <p>Produced by James Connell — Texas</p>
+    <span class="sp-meta">10 recordings</span>
+  </div>
+</div>
+
+<section class="sp-section">
+  <div class="sp-controls-row">
+    <button class="sp-play-all" id="playAllBtn" aria-label="Play all">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="#000"><polygon points="6,3 20,12 6,21"/></svg>
+    </button>
   </div>
 
-  <section class="audio-section">
-    <div class="audio-inner">
-      <div id="waveform"></div>
-
-      <div class="audio-controls">
-        <button class="ctrl-btn skip-back" aria-label="Skip back 10s">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
-        </button>
-        <button class="ctrl-btn play-pause-btn" aria-label="Play / Pause">
-          <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.4"/><polygon points="10,8 16,12 10,16"/></svg>
-          <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="10"/><line x1="10" y1="15" x2="10" y2="9"/><line x1="14" y1="15" x2="14" y2="9"/></svg>
-        </button>
-        <button class="ctrl-btn skip-fwd" aria-label="Skip forward 10s">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l4 2"/></svg>
-        </button>
-        <span class="track-info">Soprano and Orchestra — Mozart: "Alleluia"</span>
-        <div class="vol-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          <input type="range" id="volume" min="0" max="1" step="0.05" value="0.8">
-        </div>
-      </div>
-
-      <ol class="track-list">
-        <li class="track-item is-active" data-src="assets/audio/AlleluiaMargaret.m4a">
-          <span class="track-num">1</span>
-          Soprano and Orchestra — Mozart: "Alleluia"
-        </li>
-        <li class="track-item" data-src="assets/audio/violin-piano.m4a">
-          <span class="track-num">2</span>
-          Violin &amp; Piano — Mon cœur s'ouvre à ta voix
-        </li>
-        <li class="track-item" data-src="assets/audio/AmandaCello.m4a">
-          <span class="track-num">3</span>
-          Cello &amp; Piano
-        </li>
-        <li class="track-item" data-src="assets/audio/AppalacianSpring.m4a">
-          <span class="track-num">4</span>
-          Chamber Orchestra — Appalachian Spring
-        </li>
-        <li class="track-item" data-src="assets/audio/NoelWeSing.m4a">
-          <span class="track-num">5</span>
-          Voice Quartette &amp; Organ — Noel We Sing
-        </li>
-        <li class="track-item" data-src="assets/audio/DavidHiggsBachSinfonia29.m4a">
-          <span class="track-num">6</span>
-          Pipe Organ — J.S. Bach, Sinfonia 29
-        </li>
-        <li class="track-item" data-src="assets/audio/WidorTocatta.m4a">
-          <span class="track-num">7</span>
-          Pipe Organ — Widor Toccata
-        </li>
-        <li class="track-item" data-src="assets/audio/Rejoice.m4a">
-          <span class="track-num">8</span>
-          Choir &amp; Organ — Rejoice
-        </li>
-        <li class="track-item" data-src="assets/audio/OMiaBambinoCaro.m4a">
-          <span class="track-num">9</span>
-          Soprano &amp; Orchestra — Puccini: "O mio babbino caro"
-        </li>
-        <li class="track-item" data-src="assets/audio/ODivine-Redeemer.m4a">
-          <span class="track-num">10</span>
-          Soprano &amp; Pipe Organ — O Divine Redeemer
-        </li>
-      </ol>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-row">
-      <a class="footer-brand" href="index.html">Connell Music</a>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bio.html">Bio</a></li>
-        <li><a href="video.html">Video</a></li>
-        <li><a href="audio.html">Audio</a></li>
-        <li><a href="photos.html">Photos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a class="footer-email" href="mailto:james@connellmusic.com" aria-label="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      </a>
-    </div>
-    <p class="footer-copy">© 2026 Connell Music, All Rights Reserved</p>
+  <div class="sp-track-header">
+    <span>#</span>
+    <span>Title</span>
+    <span class="col-dur">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </span>
   </div>
-</footer>
+
+  <ol class="sp-tracklist" id="trackList"></ol>
+</section>
+
+<!-- Fixed bottom player -->
+<div class="sp-player-bar">
+  <div class="sp-now-playing">
+    <div class="sp-now-art">
+      <img src="assets/images/ClassicalTrioRecording.jpg" srcset="assets/images/mobile/ClassicalTrioRecording.jpg 320w, assets/images/ClassicalTrioRecording.jpg 640w" sizes="(max-width:600px) 320px, 640px" alt="Now playing" id="nowArt">
+    </div>
+    <div class="sp-now-text">
+      <div class="sp-now-title" id="nowTitle">—</div>
+      <div class="sp-now-sub" id="nowSub">James Connell</div>
+    </div>
+  </div>
+
+  <div class="sp-center">
+    <div class="sp-btn-row">
+      <button class="sp-ctrl-btn" id="prevBtn" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="19,20 9,12 19,4"/><rect x="5" y="4" width="2" height="16" rx="1"/></svg>
+      </button>
+      <button class="sp-ctrl-btn sp-play-pause" id="playPauseBtn" aria-label="Play">
+        <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        <svg class="pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="5" y="4" width="4" height="16" rx="1"/><rect x="15" y="4" width="4" height="16" rx="1"/></svg>
+      </button>
+      <button class="sp-ctrl-btn" id="nextBtn" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,4 15,12 5,20"/><rect x="17" y="4" width="2" height="16" rx="1"/></svg>
+      </button>
+    </div>
+    <div class="sp-progress-row">
+      <span class="sp-time" id="curTime">0:00</span>
+      <input type="range" class="sp-seek" id="seekBar" min="0" max="100" step="0.1" value="0">
+      <span class="sp-time" id="totTime">0:00</span>
+    </div>
+  </div>
+
+</div>
+
+<audio id="audioEl" preload="metadata"></audio>
 
 <script src="assets/js/main.js"></script>
-<script type="module">
-import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js';
+<script>
+const DEFAULT_COVER     = 'assets/images/ClassicalTrioRecording.jpg';
+const DEFAULT_COVER_MOB = 'assets/images/mobile/ClassicalTrioRecording.jpg';
 
-const tracks = [...document.querySelectorAll('.track-item')];
-let currentIndex = 0;
+const TRACKS = [
+  { src:'assets/audio/AlleluiaMargaret.m4a',       title:'Mozart: "Alleluia"',             sub:'Soprano and Orchestra' },
+  { src:'assets/audio/violin-piano.m4a',            title:'Mon cœur s\'ouvre à ta voix',    sub:'Violin & Piano',
+    cover:'assets/images/CDcovers/aria-di-violino-desktop.jpg', coverMob:'assets/images/CDcovers/aria-di-violino-mobile.jpg' },
+  { src:'assets/audio/AmandaCello.m4a',             title:'Cello & Piano',                  sub:'Chamber' },
+  { src:'assets/audio/AppalacianSpring.m4a',        title:'Appalachian Spring',             sub:'Chamber Orchestra',
+    cover:'assets/images/CDcovers/dco-desktop.jpg', coverMob:'assets/images/CDcovers/dco-mobile.jpg' },
+  { src:'assets/audio/NoelWeSing.m4a',              title:'Noel We Sing',                   sub:'Voice Quartette & Organ' },
+  { src:'assets/audio/DavidHiggsBachSinfonia29.m4a',title:'J.S. Bach, Sinfonia 29',        sub:'Pipe Organ' },
+  { src:'assets/audio/WidorTocatta.m4a',            title:'Widor Toccata',                  sub:'Pipe Organ' },
+  { src:'assets/audio/Rejoice.m4a',                 title:'Rejoice',                        sub:'Choir & Organ' },
+  { src:'assets/audio/OMiaBambinoCaro.m4a',         title:'Puccini: "O mio babbino caro"', sub:'Soprano & Orchestra' },
+  { src:'assets/audio/ODivine-Redeemer.m4a',        title:'O Divine Redeemer',              sub:'Soprano & Pipe Organ' },
+];
 
-const ws = WaveSurfer.create({
-  container: '#waveform',
-  waveColor: 'rgba(255,255,255,0.2)',
-  progressColor: '#c9a84c',
-  height: 80,
-  barWidth: 2,
-  barGap: 1,
-  barRadius: 2,
-  normalize: true,
-  url: 'assets/audio/AlleluiaMargaret.m4a',
-});
-
-const trackInfo = document.querySelector('.track-info');
-const playBtn   = document.querySelector('.play-pause-btn');
+const audio     = document.getElementById('audioEl');
+const playBtn   = document.getElementById('playPauseBtn');
 const playIcon  = playBtn.querySelector('.play-icon');
 const pauseIcon = playBtn.querySelector('.pause-icon');
+const seekBar   = document.getElementById('seekBar');
+const curTime   = document.getElementById('curTime');
+const totTime   = document.getElementById('totTime');
+const nowTitle  = document.getElementById('nowTitle');
+const nowSub    = document.getElementById('nowSub');
+const listEl    = document.getElementById('trackList');
+audio.volume = 1;
 
-function loadTrack(index) {
-  const item = tracks[index];
-  if (!item) return;
-  currentIndex = index;
-  ws.load(item.dataset.src);
-  trackInfo.textContent = item.textContent.trim().replace(/^\d+\s*/, '');
-  tracks.forEach((t, i) => t.classList.toggle('is-active', i === index));
+let current = 0;
+const durations = new Array(TRACKS.length).fill(null);
+
+function fmt(s) {
+  if (!s || isNaN(s)) return '--:--';
+  return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
 }
 
-ws.on('play',  () => { playIcon.style.display = 'none'; pauseIcon.style.display = ''; });
-ws.on('pause', () => { playIcon.style.display = ''; pauseIcon.style.display = 'none'; });
-ws.on('finish', () => { if (currentIndex < tracks.length - 1) { loadTrack(currentIndex + 1); ws.play(); } });
+function setFill(el, pct) {
+  el.style.background = `linear-gradient(to right,#c9a84c ${pct}%,#383838 ${pct}%)`;
+}
 
-playBtn.addEventListener('click', () => ws.playPause());
-document.querySelector('.skip-back').addEventListener('click', () => ws.skip(-10));
-document.querySelector('.skip-fwd').addEventListener('click',  () => ws.skip(10));
+function renderList() {
+  listEl.innerHTML = TRACKS.map((t, i) => `
+    <li class="sp-track${i===current?' is-active':''}${i===current&&!audio.paused?' is-playing':''}" data-i="${i}">
+      <div class="sp-track-num">
+        <span class="num-text">${i+1}</span>
+        <span class="eq-bars"><span></span><span></span><span></span></span>
+      </div>
+      <div class="sp-track-info">
+        <span class="sp-track-title">${t.title}</span>
+        <span class="sp-track-sub">${t.sub}</span>
+      </div>
+      <span class="sp-track-dur" id="dur${i}">${durations[i]?fmt(durations[i]):'--:--'}</span>
+    </li>`).join('');
+  listEl.querySelectorAll('.sp-track').forEach(row => {
+    row.addEventListener('click', () => loadTrack(+row.dataset.i, true));
+  });
+}
 
-const vol = document.getElementById('volume');
-vol.addEventListener('input', () => ws.setVolume(parseFloat(vol.value)));
+const nowArt = document.getElementById('nowArt');
 
-tracks.forEach((item, i) => {
-  item.addEventListener('click', () => { loadTrack(i); ws.play(); });
+function loadTrack(i, play=false) {
+  current = i;
+  const t = TRACKS[i];
+  audio.src = t.src;
+  nowTitle.textContent = t.title;
+  nowSub.textContent   = t.sub;
+  // Swap album art if the track has its own cover
+  const desk = t.cover    || DEFAULT_COVER;
+  const mob  = t.coverMob || DEFAULT_COVER_MOB;
+  nowArt.src    = desk;
+  nowArt.srcset = `${mob} 320w, ${desk} 640w`;
+  nowArt.alt    = t.title;
+  renderList();
+  if (play) audio.play();
+}
+
+function syncPlayState() {
+  const playing = !audio.paused;
+  playIcon.style.display  = playing ? 'none' : '';
+  pauseIcon.style.display = playing ? '' : 'none';
+  document.querySelectorAll('.sp-track').forEach((r,i) => {
+    r.classList.toggle('is-playing', i===current && playing);
+  });
+}
+
+audio.addEventListener('play',  syncPlayState);
+audio.addEventListener('pause', syncPlayState);
+
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  seekBar.value = pct;
+  setFill(seekBar, pct);
+  curTime.textContent = fmt(audio.currentTime);
 });
+
+audio.addEventListener('loadedmetadata', () => {
+  totTime.textContent = fmt(audio.duration);
+  durations[current]  = audio.duration;
+  const el = document.getElementById(`dur${current}`);
+  if (el) el.textContent = fmt(audio.duration);
+});
+
+audio.addEventListener('ended', () => {
+  if (current < TRACKS.length-1) loadTrack(current+1, true);
+  else syncPlayState();
+});
+
+seekBar.addEventListener('input', () => {
+  if (audio.duration) audio.currentTime = (seekBar.value/100) * audio.duration;
+  setFill(seekBar, seekBar.value);
+});
+
+
+playBtn.addEventListener('click', () => {
+  if (!audio.src) { loadTrack(0, true); return; }
+  audio.paused ? audio.play() : audio.pause();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (audio.currentTime > 3) { audio.currentTime = 0; return; }
+  if (current > 0) loadTrack(current-1, !audio.paused);
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (current < TRACKS.length-1) loadTrack(current+1, !audio.paused);
+});
+
+document.getElementById('playAllBtn').addEventListener('click', () => loadTrack(0, true));
+
+// Pre-fetch durations in the background
+TRACKS.forEach((t, i) => {
+  const tmp = new Audio();
+  tmp.preload = 'metadata';
+  tmp.addEventListener('loadedmetadata', () => {
+    durations[i] = tmp.duration;
+    const el = document.getElementById(`dur${i}`);
+    if (el) el.textContent = fmt(tmp.duration);
+  });
+  tmp.src = t.src;
+});
+
+// Init
+setFill(seekBar, 0);
+renderList();
 </script>
 </body>
 </html>

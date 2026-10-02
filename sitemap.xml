@@ -2,32 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://connellmusic.com/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-27</lastmod>
     <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://connellmusic.com/bio</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://connellmusic.com/the-team</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://connellmusic.com/gary-levinson</loc>
+    <lastmod>2026-05-27</lastmod>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://connellmusic.com/eric-silberger</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://connellmusic.com/ricardo-veiga</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://connellmusic.com/video</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-27</lastmod>
     <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://connellmusic.com/audio</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-27</lastmod>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://connellmusic.com/photos</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://connellmusic.com/contact</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
