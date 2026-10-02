@@ -8,9 +8,11 @@ Personal/business website for Connell Music (connellmusic.com). Static HTML/CSS/
 
 ## Deploying
 
-```bash
-vercel --prod
-```
+Vercel deploys this site from GitHub (`jameswconnell/connell-music`, branch `main`). On the "push" trigger word: commit, then `git push origin main`. Do not run `vercel --prod` — an upload from the folder leaves GitHub behind the live site.
+
+`.vercelignore` keeps `CLAUDE.md`, `.claude/` and `Reports/` off the public site.
+
+Local preview: the `static` configuration in `.claude/launch.json` (http://localhost:8020, clean URLs like `/video`).
 
 ## Site-Specific Conventions
 
